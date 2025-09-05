@@ -1,4 +1,4 @@
-import GrosCard,{WithPromotedLabel} from "./GrosCard";
+import RestaurantCard,{WithPromotedLabel} from "./RestaurantCard";
 // import reslist from "../utils/mockdata"; 
 // and also we removed mockdata file
 import { useState,useEffect} from "react";
@@ -16,7 +16,7 @@ const Body = () =>{
 
    const [searchText , setSearchText] =useState("");
   
-   const PromoteCard = WithPromotedLabel(GrosCard);
+   const PromoteCard = WithPromotedLabel(RestaurantCard);
 
    console.log("Body Rendered");
    useEffect(()=>{
@@ -25,20 +25,12 @@ const Body = () =>{
    
    const fetchData = async () => {
       const data = await fetch(
-        // "https://www.swiggy.com/dapi/restaurants/list/v5?lat=16.5774798&lng=82.0031455&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-          "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.406498&lng=78.47724389999999&collection=83639&tags=layout_CCS_Biryani&sortBy=&filters=&type=rcv2&offset=0&page_type=null"
-        // https://corsproxy.io/? 
+        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.7273581&lng=83.2234962&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
       );
       const json = await data.json();
 
-     let a=json.data.cards
-     let b=[]
-     for(let i=3;i<a.length;i=i+1)
-     {
-      b.push(a[i].card?.card?.info)
-     }
-      setReslist1(b);
-      setfilteredRestuarants(b);
+      setReslist1(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+      setfilteredRestuarants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     }
 
     console.log("resList1: ",resList1);
@@ -75,7 +67,7 @@ const Body = () =>{
           <button className="px-3 py-2 ml-2 rounded-md bg-orange-500"
             onClick={()=>{
              const filteredRestuarant = resList1.filter(
-              (res) => res.name.toLowerCase().includes(searchText.toLowerCase())
+              (res) => res.info.name.toLowerCase().includes(searchText.toLowerCase())
             );
             setfilteredRestuarants(filteredRestuarant);
 
@@ -86,7 +78,7 @@ const Body = () =>{
           <button className="bg-yellow-400 rounded-lg px-4 py-2" 
                   onClick = { () => {
                     filteredList = resList1.filter(
-                      (res) => res.avgRating>4.3
+                      (res) => res.info.avgRating>4.3
                     );
                     // setReslist1(filteredList);
                     setfilteredRestuarants(filteredList)
@@ -98,10 +90,10 @@ const Body = () =>{
     {/* key={Restuarant.info.id} */}
       <div className="flex flex-wrap ">
         {FilteredRestuarants.map((Restuarant)=>(
-          <Link className="link" key={Restuarant.id} to={"/restaurant/"+Restuarant.id}>
-              {Restuarant.promoted ? 
+          <Link className="link" key={Restuarant.info.id} to={"/restaurant/"+Restuarant.info.id}>
+              {Restuarant.info.promoted ? 
               <PromoteCard resData={Restuarant}/> :
-              <GrosCard resData={Restuarant}/>}
+              <RestaurantCard resData={Restuarant}/>}
           </Link>
             
         ))}

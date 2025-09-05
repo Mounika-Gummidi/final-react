@@ -9,7 +9,6 @@ const RestaurantMenu = () => {
   const {resId} = useParams();
   //custom hooks to optimize code
   const resInfo = useRestaurantMenu(resId);
-  // console.log("resinfo:",resInfo);
 
   // controlled components
   const [showIndex, setShowIndex] = useState(null);

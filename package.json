@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "i am learning react",
   "scripts": {
-    "start": "parcel creating-app.html",
+    "start": "parcel index.html",
     "test": "jest"
   },
   "repository": {

@@ -1,10 +1,9 @@
-const Grocery = () => {
-  return(
-    <div className="text-white h-svh">
-    <h2>we are inside our grocery store!!!</h2>
-  </div>
-  );
-  
-};
+const Grocery=() => {
+    return (
+      <div className="text-center bg-gray-900">
+        <p className="bold text-white p-5">We are inside our <span className="text-yellow-300">Grocery Store</span></p>
+      </div>
+    )
+}
 
 export default Grocery;
