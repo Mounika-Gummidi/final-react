@@ -1,0 +1,221 @@
+{
+  "cards": [
+    {
+      "card": {
+        "card": {
+          "@type": "type.googleapis.com/swiggy.gandalf.widgets.menu.MenuCampaignV2",
+          "header": {
+            "title": "Chef's Specials"
+          }
+        }
+      }
+    },
+    {
+      "card": {
+        "card": {
+          "@type": "type.googleapis.com/swiggy.presentation.food.v2.RestaurantInfo"
+        }
+      }
+    },
+    {
+      "card": {
+        "card": {
+          "info": {
+            "id": "689935",
+            "name": "Sample Restaurant - The Mock Eatery",
+            "city": "Hyderabad",
+            "areaName": "Gachibowli",
+            "costForTwoMessage": "₹400 for two",
+            "avgRating": 4.2,
+            "cuisines": ["Indian", "Chinese", "Desserts", "Beverages"],
+            "sla": {
+              "deliveryTime": 30
+            }
+          }
+        }
+      }
+    },
+    {
+      "card": {
+        "card": {
+          "@type": "type.googleapis.com/swiggy.presentation.food.v2.MenuExtendedSearch"
+        }
+      }
+    },
+    {
+      "groupedCard": {
+        "cardGroupMap": {
+          "REGULAR": {
+            "cards": [
+              {
+                "card": {
+                  "card": {
+                    "@type": "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory",
+                    "id": "cat1",
+                    "title": "Starters",
+                    "itemCards": [
+                      {
+                        "card": {
+                          "info": {
+                            "id": "item1",
+                            "name": "Veg Manchurian Dry",
+                            "price": 15000,
+                            "description": "Crispy fried vegetable balls tossed in a spicy, tangy Indo-Chinese sauce.",
+                            "imageUrl": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=300&auto=format&fit=crop"
+                          }
+                        }
+                      },
+                      {
+                        "card": {
+                          "info": {
+                            "id": "item2",
+                            "name": "Paneer Tikka",
+                            "price": 20000,
+                            "description": "Marinated paneer, onions, and capsicum grilled to perfection in a tandoor.",
+                            "imageUrl": "https://lentillovingfamily.com/wp-content/uploads/2025/08/paneer-tikka-2.jpg"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "card": {
+                  "card": {
+                    "@type": "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory",
+                    "id": "cat2",
+                    "title": "Main Course",
+                    "itemCards": [
+                      {
+                        "card": {
+                          "info": {
+                            "id": "item3",
+                            "name": "Paneer Butter Masala",
+                            "price": 25000,
+                            "description": "Rich and creamy tomato-based gravy with soft cottage cheese cubes.",
+                            "imageUrl": "https://www.indianhealthyrecipes.com/wp-content/uploads/2023/07/paneer-butter-masala-recipe.webp"
+                          }
+                        }
+                      },
+                      {
+                        "card": {
+                          "info": {
+                            "id": "item4",
+                            "name": "Chicken Biryani (Large)",
+                            "price": 30000,
+                            "description": "Fragrant basmati rice slow-cooked with succulent chicken pieces and aromatic spices.",
+                            "imageUrl": "https://ministryofcurry.com/wp-content/uploads/2024/06/chicken-biryani-5.jpg"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "card": {
+                  "card": {
+                    "@type": "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory",
+                    "id": "cat4",
+                    "title": "Rice & Noodles",
+                    "itemCards": [
+                      {
+                        "card": {
+                          "info": {
+                            "id": "item6",
+                            "name": "Steamed Rice",
+                            "price": 10000,
+                            "description": "Plain fluffy steamed basmati rice.",
+                            "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREPXSkOW9ySGpr-F95EeAWBXTGWOipm_nm0Q&s"
+                          }
+                        }
+                      },
+                      {
+                        "card": {
+                          "info": {
+                            "id": "item7",
+                            "name": "Veg Fried Rice",
+                            "price": 18000,
+                            "description": "Wok-tossed rice with fresh vegetables and soy sauce.",
+                            "imageUrl": "https://shwetainthekitchen.com/wp-content/uploads/2023/06/veg-fried-rice.jpg"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "card": {
+                  "card": {
+                    "@type": "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory",
+                    "id": "cat5",
+                    "title": "Beverages",
+                    "itemCards": [
+                      {
+                        "card": {
+                          "info": {
+                            "id": "item8",
+                            "name": "Fresh Lime Soda",
+                            "price": 6000,
+                            "description": "Refreshing lime juice mixed with soda, sweet or salted.",
+                            "imageUrl": "https://sattvakitchen.com/wp-content/uploads/2024/05/SWEET-LIME-SODA-shutterstock_2309599743-copy-Copy-copy.jpg"
+                          }
+                        }
+                      },
+                      {
+                        "card": {
+                          "info": {
+                            "id": "item9",
+                            "name": "Bottled Water (1L)",
+                            "price": 3000,
+                            "description": "Sealed packaged drinking water.",
+                            "imageUrl": "https://thecougarstar.com/wp-content/uploads/2022/02/bottled_water-900x675.jpeg"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "card": {
+                  "card": {
+                    "@type": "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory",
+                    "id": "cat3",
+                    "title": "Desserts",
+                    "itemCards": [
+                      {
+                        "card": {
+                          "info": {
+                            "id": "item5",
+                            "name": "Gulab Jamun (2 pcs)",
+                            "price": 8000,
+                            "description": "Soft, deep-fried dough balls soaked in a sweet, sticky rosewater syrup.",
+                            "imageUrl": "https://www.cadburydessertscorner.com/hubfs/dc-website-2022/articles/soft-gulab-jamun-recipe-for-raksha-bandhan-from-dough-to-syrup-all-you-need-to-know/soft-gulab-jamun-recipe-for-raksha-bandhan-from-dough-to-syrup-all-you-need-to-know.webp"
+                          }
+                        }
+                      },
+                      {
+                        "card": {
+                          "info": {
+                            "id": "item10",
+                            "name": "Vanilla Ice Cream",
+                            "price": 12000,
+                            "description": "Classic vanilla scoop.",
+                            "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE0lEhTo29DzmOliZ_2RRI-LAI_mx3dUIEqg&s"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

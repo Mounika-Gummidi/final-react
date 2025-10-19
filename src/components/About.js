@@ -13,9 +13,9 @@ class About extends React.Component{
   render(){
     console.log("parent render");
     return(
-      <div className="text-white h-96 flex justify-center">
+      <div className="text-white min-h-screen flex">
         
-        <div className="w-6/12 m-auto ">
+        <div className="w-6/12 mx-auto mt-28">
             <h1 className="flex font-bold text-2xl pb-7">About Us</h1>
             <p>Welcome to <span className="text-yellow-400">FoodNest</span> – where great food meets convenience! We're here to bring you delicious dishes from your favorite local spots, all in just a few taps. Our mission is simple: to make food delivery easy, fast, and enjoyable, so you can focus on savoring every bite. Whether it's comfort food or something new, we've got it all. Dive in and discover something tasty with us!</p>
         </div>

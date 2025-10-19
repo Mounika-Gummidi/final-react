@@ -25,12 +25,12 @@ const Body = () =>{
    
    const fetchData = async () => {
       const data = await fetch(
-        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.7273581&lng=83.2234962&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.461421&lng=78.3346205&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
       );
       const json = await data.json();
 
-      setReslist1(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-      setfilteredRestuarants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+      setReslist1(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+      setfilteredRestuarants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     }
 
     console.log("resList1: ",resList1);
@@ -47,10 +47,9 @@ const Body = () =>{
       );
     
 
-    if(resList1.length === 0)
-    {
-      return <Shimmer />
-    }
+      if (!resList1 || resList1.length === 0) {
+        return <Shimmer />;
+      }
     return (
     
     <div className="body-container">
