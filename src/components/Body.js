@@ -30,11 +30,16 @@ const Body = () =>{
     
     const data = await fetch(proxyUrl); 
     const json = await data.json();
+    const swiggyJson = JSON.parse(json.contents);
 
-    const restaurants = json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
+    const restaurants =swiggyJson?.data?.cards?.find(card => card.card.card.gridElements)?.card?.card?.gridElements?.infoWithStyle?.restaurants || 
+    swiggyJson?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants || 
+    swiggyJson?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants || 
+    swiggyJson?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || 
+    [];
     
     setReslist1(restaurants);
-    setFilteredRestuarants(restaurants);
+    setfilteredRestuarants(restaurants);
 }
 
     console.log("resList1: ",resList1);
