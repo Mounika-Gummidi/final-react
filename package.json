@@ -4,11 +4,11 @@
   "version": "1.0.0",
   "description": "i am learning react",
   "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html --dist-dir dist",
-    "test": "jest",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+  "start": "parcel index.html",
+  "build": "parcel build index.html --dist-dir dist --public-url /final-react/",
+  "test": "jest",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   "author": "Mounika",
   "license": "ISC",
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "parcel": "^2.16.0",
     "process": "^0.11.10",
     "tailwindcss": "^3.4.14"
@@ -32,6 +33,5 @@
   "browserslist": [
     "last 2 Versions"
   ],
-  "main": "tailwind.config.js",
   "keywords": []
 }
