@@ -24,23 +24,33 @@ const Body = () =>{
    } , []);
    
    const fetchData = async () => {
-    const originalUrl = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.461421&lng=78.3346205&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
-    
-    const proxyUrl = "https://api.allorigins.win/get?url=" + encodeURIComponent(originalUrl);
-    
-    const data = await fetch(proxyUrl); 
-    const json = await data.json();
-    const swiggyJson = JSON.parse(json.contents);
+        const originalUrl = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.461421&lng=78.3346205&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+        const proxyUrl = "https://api.allorigins.win/get?url=" + encodeURIComponent(originalUrl);
+        
+        try {
+            const data = await fetch(proxyUrl); 
+            const json = await data.json(); 
+            
+            const swiggyJson = JSON.parse(json.contents);
+            
+            // This robust path checking handles volatile Swiggy JSON structure
+            const restaurants = 
+              swiggyJson?.data?.cards?.find(card => card.card.card.gridElements)?.card?.card?.gridElements?.infoWithStyle?.restaurants || 
+              swiggyJson?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants || 
+              swiggyJson?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants || 
+              swiggyJson?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || 
+              [];
 
-    const restaurants =swiggyJson?.data?.cards?.find(card => card.card.card.gridElements)?.card?.card?.gridElements?.infoWithStyle?.restaurants || 
-    swiggyJson?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants || 
-    swiggyJson?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants || 
-    swiggyJson?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || 
-    [];
-    
-    setReslist1(restaurants);
-    setfilteredRestuarants(restaurants);
-}
+            // CRITICAL DEBUG: Log what you received
+            console.log("Restaurants received:", restaurants.length); 
+
+            setReslist1(restaurants);
+            setfilteredRestuarants(restaurants);
+
+        } catch (error) {
+            console.error("Fetch failed:", error);
+        }
+    }
 
     console.log("resList1: ",resList1);
     
