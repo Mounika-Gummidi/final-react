@@ -34,18 +34,14 @@ const Body = () =>{
             const swiggyJson = JSON.parse(json.contents);
             
             // This robust path checking handles volatile Swiggy JSON structure
-            const restaurants = 
-              swiggyJson?.data?.cards?.find(card => card.card.card.gridElements)?.card?.card?.gridElements?.infoWithStyle?.restaurants || 
-              swiggyJson?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants || 
-              swiggyJson?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants || 
-              swiggyJson?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || 
-              [];
-
-            // CRITICAL DEBUG: Log what you received
-            console.log("Restaurants received:", restaurants.length); 
-
-            setReslist1(restaurants);
-            setfilteredRestuarants(restaurants);
+            const restaurantGridCard = swiggyJson?.data?.cards.find(
+              card => card.card.card.gridElements?.infoWithStyle?.restaurants
+          );
+          
+          const restaurants = restaurantGridCard?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
+  
+          setReslist1(restaurants);
+          setfilteredRestuarants(restaurants);
 
         } catch (error) {
             console.error("Fetch failed:", error);
