@@ -29,8 +29,10 @@ const Body = () =>{
       );
       const json = await data.json();
 
-      setReslist1(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-      setfilteredRestuarants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+      const restaurants = json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
+      setReslist1(restaurants);
+      setFilteredRestaurants(restaurants);
+
     }
 
     console.log("resList1: ",resList1);
@@ -76,7 +78,7 @@ const Body = () =>{
         <div className="">
           <button className="bg-yellow-400 rounded-lg px-4 py-2" 
                   onClick = { () => {
-                    filteredList = resList1.filter(
+                    const filteredList = resList1.filter(
                       (res) => res.info.avgRating>4.3
                     );
                     // setReslist1(filteredList);
