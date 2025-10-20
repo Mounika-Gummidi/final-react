@@ -4,6 +4,7 @@
   "description": "i am learning react",
   "scripts": {
     "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir dist",
     "test": "jest"
   },
   "repository": {
