@@ -1,5 +1,5 @@
 {
-  "homegage": "https://Mounika-Gummidi.github.io/final-react",
+  "homepage": "https://Mounika-Gummidi.github.io/final-react",
   "name": "react",
   "version": "1.0.0",
   "description": "i am learning react",
@@ -8,11 +8,11 @@
     "build": "parcel build index.html --dist-dir dist",
     "test": "jest",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
-    "url": "(https://github.com/Mounika-Gummidi/final-react.git)"
+    "url": "https://github.com/Mounika-Gummidi/final-react.git"
   },
   "author": "Mounika",
   "license": "ISC",
