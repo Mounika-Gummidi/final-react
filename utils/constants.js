@@ -5,5 +5,5 @@
  export const LOGO_URL = 
       "https://img.freepik.com/premium-vector/food-point-logo-design-with-creative-pin-location-concept-premium-vector_632138-192.jpg";
 
-      export const MENU_LINK =
+ export const MENU_LINK =
       "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.461421&lng=78.3346205&restaurantId=689935&catalog_qa=undefined&submitAction=ENTER";
