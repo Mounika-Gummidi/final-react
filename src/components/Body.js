@@ -24,16 +24,17 @@ const Body = () =>{
    } , []);
    
    const fetchData = async () => {
-      const data = await fetch(
-        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.461421&lng=78.3346205&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-      );
-      const json = await data.json();
-
-      const restaurants = json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
-      setReslist1(restaurants);
-      setFilteredRestaurants(restaurants);
-
-    }
+    const originalUrl = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.461421&lng=78.3346205&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+  
+    const proxyUrl = "https://corsproxy.io/?" + encodeURIComponent(originalUrl);
+  
+    const data = await fetch(proxyUrl);
+    const json = await data.json();
+  
+    const restaurants = json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
+    setReslist1(restaurants);
+    setFilteredRestuarants(restaurants);
+  }
 
     console.log("resList1: ",resList1);
     
